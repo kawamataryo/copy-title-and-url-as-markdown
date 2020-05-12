@@ -6,7 +6,7 @@ module.exports = (_, argv) => ({
     options: path.join(__dirname, "src/options/index.tsx"),
     background: path.join(__dirname, "src/background/index.ts")
   },
-  devtool: argv.mode === 'production' ? "" : 'inline-source-map',
+  devtool: argv.mode === "production" ? "" : "inline-source-map",
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].js"
