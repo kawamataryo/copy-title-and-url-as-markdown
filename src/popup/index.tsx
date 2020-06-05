@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Popup } from "./Popup";
 import { escapeBrackets, copyToClipboard } from "../util";
+import { DEFAULT_FORMAT } from "../constant";
 
 document.addEventListener("DOMContentLoaded", function() {
   const queryInfo = {
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   chrome.tabs.query(queryInfo, function(tabs) {
-    chrome.storage.local.get({ format: "[${title}](${url})" }, async function(
+    chrome.storage.local.get({ format: DEFAULT_FORMAT }, async function(
       options
     ) {
       const tab = tabs[0];
