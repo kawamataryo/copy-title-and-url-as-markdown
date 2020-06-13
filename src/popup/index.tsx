@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   chrome.tabs.query(queryInfo, function(tabs) {
-    chrome.storage.local.get({ format: DEFAULT_FORMAT }, async function(
-      options
-    ) {
+    chrome.storage.local.get({ format: DEFAULT_FORMAT }, function(options) {
       const tab = tabs[0];
       copyToClipboard(options.format, tab);
 
